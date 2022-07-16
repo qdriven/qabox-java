@@ -1,0 +1,22 @@
+stages:
+  - lint
+  - build
+
+lint:
+  stage: lint
+  image: maven:3-jdk-11
+  tags:
+    - docker
+  script:
+    - mvn clean checkstyle:check --settings deploy/maven-settings.xml
+
+build:
+  stage: build
+  image: maven:3-jdk-11
+  tags:
+    - docker
+  script:
+    - mvn clean package --settings ci/deploy/maven-settings.xml
+  artifacts:
+    paths:
+      - target/*.jar
