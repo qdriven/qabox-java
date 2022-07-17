@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/qdriven/qabox-java/tree/HEAD)
+
+[Full Changelog](https://github.com/qdriven/qabox-java/compare/v0.0.1...HEAD)
+
+**Merged pull requests:**
+
+- add gradle options [\#1](https://github.com/qdriven/qabox-java/pull/1) ([qdriven](https://github.com/qdriven))
+
 ## [v0.0.1](https://github.com/qdriven/qabox-java/tree/v0.0.1) (2022-07-16)
 
 [Full Changelog](https://github.com/qdriven/qabox-java/compare/6e904289a9a5e9792f29a821175cb44848c13265...v0.0.1)
