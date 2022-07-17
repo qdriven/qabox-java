@@ -1,0 +1,4 @@
+java:
+  - name: project-template
+    repos:
+      - https://github.com/jshaptic/java-project-template.git
