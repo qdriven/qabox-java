@@ -2,16 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>qabox</artifactId>
+    <groupId>io.fluent</groupId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.fluent</groupId>
-  <artifactId>qabox</artifactId>
-  <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>project-templates</module>
-    <module>project-templates/simple-maven-project</module>
-  </modules>
+  <artifactId>simple-maven-project</artifactId>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -116,7 +115,7 @@
         <artifactId>maven-checkstyle-plugin</artifactId>
         <configuration>
           <configLocation>google_checks.xml</configLocation>
-<!--          <suppressionsLocation>ci/checkstyle-suppressions.xml</suppressionsLocation>-->
+          <!--          <suppressionsLocation>ci/checkstyle-suppressions.xml</suppressionsLocation>-->
           <failOnViolation>false</failOnViolation>
           <failsOnError>false</failsOnError>
           <linkXRef>false</linkXRef>
@@ -136,26 +135,26 @@
     </plugins>
   </build>
 
-<!--  <distributionManagement>-->
-<!--    <repository>-->
-<!--      <id>qabox release</id>-->
-<!--      <name>qabox-release</name>-->
-<!--      <url>-->
-<!--      </url>-->
-<!--    </repository>-->
+  <!--  <distributionManagement>-->
+  <!--    <repository>-->
+  <!--      <id>qabox release</id>-->
+  <!--      <name>qabox-release</name>-->
+  <!--      <url>-->
+  <!--      </url>-->
+  <!--    </repository>-->
 
-<!--    <snapshotRepository>-->
-<!--      <id>qabox snapshot</id>-->
-<!--      <name>qabox-snapshot</name>-->
-<!--      <url>-->
-<!--      </url>-->
-<!--    </snapshotRepository>-->
-<!--  </distributionManagement>-->
-<!--  <scm>-->
-<!--    <connection>-->
-<!--    </connection>-->
-<!--    <developerConnection>-->
-<!--    </developerConnection>-->
-<!--    <url></url>-->
-<!--  </scm>-->
+  <!--    <snapshotRepository>-->
+  <!--      <id>qabox snapshot</id>-->
+  <!--      <name>qabox-snapshot</name>-->
+  <!--      <url>-->
+  <!--      </url>-->
+  <!--    </snapshotRepository>-->
+  <!--  </distributionManagement>-->
+  <!--  <scm>-->
+  <!--    <connection>-->
+  <!--    </connection>-->
+  <!--    <developerConnection>-->
+  <!--    </developerConnection>-->
+  <!--    <url></url>-->
+  <!--  </scm>-->
 </project>
