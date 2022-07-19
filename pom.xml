@@ -11,6 +11,12 @@
   <modules>
     <module>project-templates</module>
     <module>project-templates/simple-maven-project</module>
+    <module>qabox-extra</module>
+    <module>qabox-extra/qabox-excel</module>
+    <module>qabox-extra/qabox-db</module>
+    <module>qabox-extra/qbox-supplement</module>
+    <module>qabox-extra/qabox-dispatch</module>
+    <module>qboxserver</module>
   </modules>
 
   <properties>
@@ -34,6 +40,12 @@
       <groupId>org.junit.jupiter</groupId>
       <scope>test</scope>
       <version>5.8.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.24</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
   <build>
@@ -116,7 +128,7 @@
         <artifactId>maven-checkstyle-plugin</artifactId>
         <configuration>
           <configLocation>google_checks.xml</configLocation>
-<!--          <suppressionsLocation>ci/checkstyle-suppressions.xml</suppressionsLocation>-->
+          <!--          <suppressionsLocation>ci/checkstyle-suppressions.xml</suppressionsLocation>-->
           <failOnViolation>false</failOnViolation>
           <failsOnError>false</failsOnError>
           <linkXRef>false</linkXRef>
@@ -136,26 +148,26 @@
     </plugins>
   </build>
 
-<!--  <distributionManagement>-->
-<!--    <repository>-->
-<!--      <id>qabox release</id>-->
-<!--      <name>qabox-release</name>-->
-<!--      <url>-->
-<!--      </url>-->
-<!--    </repository>-->
+  <!--  <distributionManagement>-->
+  <!--    <repository>-->
+  <!--      <id>qabox release</id>-->
+  <!--      <name>qabox-release</name>-->
+  <!--      <url>-->
+  <!--      </url>-->
+  <!--    </repository>-->
 
-<!--    <snapshotRepository>-->
-<!--      <id>qabox snapshot</id>-->
-<!--      <name>qabox-snapshot</name>-->
-<!--      <url>-->
-<!--      </url>-->
-<!--    </snapshotRepository>-->
-<!--  </distributionManagement>-->
-<!--  <scm>-->
-<!--    <connection>-->
-<!--    </connection>-->
-<!--    <developerConnection>-->
-<!--    </developerConnection>-->
-<!--    <url></url>-->
-<!--  </scm>-->
+  <!--    <snapshotRepository>-->
+  <!--      <id>qabox snapshot</id>-->
+  <!--      <name>qabox-snapshot</name>-->
+  <!--      <url>-->
+  <!--      </url>-->
+  <!--    </snapshotRepository>-->
+  <!--  </distributionManagement>-->
+  <!--  <scm>-->
+  <!--    <connection>-->
+  <!--    </connection>-->
+  <!--    <developerConnection>-->
+  <!--    </developerConnection>-->
+  <!--    <url></url>-->
+  <!--  </scm>-->
 </project>

@@ -1,0 +1,3 @@
+[submodule "reference/stubby4j"]
+	path = reference/stubby4j
+	url = https://github.com/azagniotov/stubby4j.git
