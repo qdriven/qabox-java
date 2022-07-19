@@ -4,8 +4,16 @@
 
 [Full Changelog](https://github.com/qdriven/qabox-java/compare/v0.0.1...HEAD)
 
+**Closed issues:**
+
+- Setup mock-server by stubby [\#4](https://github.com/qdriven/qabox-java/issues/4)
+- Java Excel Implemenation for QA toolkit [\#2](https://github.com/qdriven/qabox-java/issues/2)
+
 **Merged pull requests:**
 
+- Feature/excel tools [\#6](https://github.com/qdriven/qabox-java/pull/6) ([qdriven](https://github.com/qdriven))
+- Merge pull request \#3 from qdriven/feature/excel-tools [\#5](https://github.com/qdriven/qabox-java/pull/5) ([qdriven](https://github.com/qdriven))
+- Feature/excel tools [\#3](https://github.com/qdriven/qabox-java/pull/3) ([qdriven](https://github.com/qdriven))
 - add gradle options [\#1](https://github.com/qdriven/qabox-java/pull/1) ([qdriven](https://github.com/qdriven))
 
 ## [v0.0.1](https://github.com/qdriven/qabox-java/tree/v0.0.1) (2022-07-16)
