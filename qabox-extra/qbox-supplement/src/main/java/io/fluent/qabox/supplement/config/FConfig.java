@@ -5,13 +5,14 @@ import cn.hutool.setting.Setting;
 
 public class FConfig {
   Setting setting;
-  private static String DEFAULT_SETTING = "config/fluent.setting";
 
   private FConfig() {
   }
 
+  private final static String DEFAULT_SETTING_PATH = "config/app.setting";
+
   public static FConfig create() {
-    return create(DEFAULT_SETTING);
+    return create(DEFAULT_SETTING_PATH);
   }
 
   public static FConfig create(String settingPath) {

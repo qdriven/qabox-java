@@ -2,9 +2,10 @@ package io.fluent.qabox.dao;
 
 import cn.hutool.db.ActiveEntity;
 import cn.hutool.db.Db;
+import cn.hutool.db.Entity;
 import cn.hutool.db.ds.DSFactory;
 import cn.hutool.setting.Setting;
-import io.fluent.qabox.dao.model.Api;
+import io.fluent.qabox.dao.model.ApiDefinition;
 import io.fluent.qabox.dao.model.FActiveEntity;
 import io.fluent.qabox.dao.model.FEntity;
 import io.fluent.qabox.supplement.config.FConfig;
@@ -12,6 +13,8 @@ import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
 import java.util.List;
+
+import static io.fluent.qabox.dao.constants.DefaultConstants.POSTGRESQL;
 
 
 /**
@@ -55,19 +58,24 @@ public class DaoTest {
    * - Page Query
    * - For Transaction
    */
+
   @Test
-  public void testInsert() throws SQLException {
-    FDaoAccessor dao = FDaoAccessor.create();
-    Api api = new Api();
+  public void test_FDao() throws SQLException {
+    FDao dao = new FDao(new FDaoConfig());
+    dao.setDb(POSTGRESQL);
+    System.out.println(dao);
+    ApiDefinition api = new ApiDefinition();
     api.setModuleName("test");
     api.setService("test");
-    //table name doesn't work
-    Long id = dao.getTableDao("api").addForGeneratedKey(FEntity.parseWithUnderlineCase(api));
-    System.out.println(id);
+    dao.db.insert(
+      Entity.parseWithUnderlineCase(api).setTableName("api"));
 
-    ActiveEntity entity = FActiveEntity.parseWithUnderlineCase(api);
-    entity.add();
-
+    int result = dao.addOrUpdate( //bug here
+     "api",api
+    );
+    System.out.println(result);
+    FDaoAccessor accessor =FDaoAccessor.create(new FDaoConfig());
+    accessor.getDao().addOrUpdate("api",api);
   }
 
 

@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static io.fluent.qabox.dao.constants.DefaultConstants.POSTGRESQL;
+
 /**
  * All Db Dao Accessor:
  * - Hold all the DaoTemplates
@@ -21,56 +23,31 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class FDaoAccessor {
   FDaoConfig config;
-  Db db;
-  DataSource ds;
-  Map<String, DaoTemplate> tableDaoTemplates = new ConcurrentHashMap<>();
-  Map<String, FActiveEntity> fActiveEntityMap = new ConcurrentHashMap<>();
+  Map<String, FDao> daoMap = new ConcurrentHashMap<>();
 
-  public FDaoAccessor(FDaoConfig config, String dbName) {
-
+  public FDaoAccessor(FDaoConfig config) {
     this.config = config;
-    this.ds = this.config.getDataSource(dbName);
-    this.db = Db.use(this.ds);
-  }
-
-  public static FDaoAccessor create(FDaoConfig config, String dbConfigGroup) {
-    return new FDaoAccessor(config, dbConfigGroup);
   }
 
   public static FDaoAccessor create(FDaoConfig config) {
-    return new FDaoAccessor(config, "postgresql");
+    return new FDaoAccessor(config);
   }
 
-  public static FDaoAccessor create() {
-    return new FDaoAccessor(new FDaoConfig(), "postgresql");
-  }
-
-  public List findAll(String tableName) {
-    try {
-      return this.db.findAll(tableName);
-    } catch (SQLException e) {
-      return Collections.emptyList();
+  public FDao getDao(String dbName) {
+    if (daoMap.get(dbName) == null) {
+      FDao dao = FDao.create(this.config, dbName);
+      daoMap.put(dbName, dao);
+      return dao;
     }
+    return daoMap.get(dbName);
   }
 
-  public List query(String query, Map<String, Object> paramMap) {
-    try {
-      return this.db.query(query, paramMap);
-    } catch (SQLException e) {
-      return Collections.emptyList();
+  public FDao getDao() {
+    if (daoMap.get(POSTGRESQL) == null) {
+      FDao dao = FDao.create(this.config, POSTGRESQL);
+      daoMap.put(POSTGRESQL, dao);
+      return dao;
     }
+    return daoMap.get(POSTGRESQL);
   }
-
-  public Db getDb() {
-    return db;
-  }
-
-  public DaoTemplate getTableDao(String table) {
-    if (this.tableDaoTemplates.get(table) == null) {
-      this.tableDaoTemplates.put(table,
-        new DaoTemplate(table, this.ds));
-    }
-    return this.tableDaoTemplates.get(table);
-  }
-
 }

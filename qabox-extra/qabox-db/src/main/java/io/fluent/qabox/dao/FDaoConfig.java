@@ -7,10 +7,12 @@ import io.fluent.qabox.supplement.config.FConfig;
 
 import javax.sql.DataSource;
 
+import static io.fluent.qabox.dao.constants.DefaultConstants.DB_GROUP;
+
 public class FDaoConfig {
 
   FConfig config;
-  private static String DB_GROUP = "DB";
+
 
   public FDaoConfig() {
     this.config = FConfig.create();
