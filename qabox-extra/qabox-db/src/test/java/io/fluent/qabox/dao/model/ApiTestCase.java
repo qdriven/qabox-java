@@ -3,10 +3,7 @@ package io.fluent.qabox.dao.model;
 import lombok.Data;
 
 @Data
-public class ApiTestCase {
-  private String moduleName;
-  private String name;
-  private String service;
+public class ApiTestCase extends NamedApi {
   private String uri;
   private String method;
   private String body;

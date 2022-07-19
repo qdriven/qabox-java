@@ -5,6 +5,8 @@ import cn.hutool.db.Db;
 import cn.hutool.db.ds.DSFactory;
 import cn.hutool.setting.Setting;
 import io.fluent.qabox.dao.model.Api;
+import io.fluent.qabox.dao.model.FActiveEntity;
+import io.fluent.qabox.dao.model.FEntity;
 import io.fluent.qabox.supplement.config.FConfig;
 import org.junit.jupiter.api.Test;
 

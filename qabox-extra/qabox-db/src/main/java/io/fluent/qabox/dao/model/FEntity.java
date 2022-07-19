@@ -1,4 +1,4 @@
-package io.fluent.qabox.dao;
+package io.fluent.qabox.dao.model;
 
 import cn.hutool.db.Entity;
 

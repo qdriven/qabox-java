@@ -3,6 +3,7 @@ package io.fluent.qabox.dao;
 
 import cn.hutool.db.DaoTemplate;
 import cn.hutool.db.Db;
+import io.fluent.qabox.dao.model.FActiveEntity;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
