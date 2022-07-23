@@ -4,5 +4,16 @@
 
 rootProject.name = 'qabox'
 include(':simple-maven-project')
+include(':qabox-dispatch')
 include(':project-templates')
+include(':qabox-db')
+include(':qabox-excel')
+include(':qbox-supplement')
+include(':qabox-extra')
+include(':boxserver')
 project(":simple-maven-project").projectDir = file('project-templates/simple-maven-project')
+project(":qabox-dispatch").projectDir = file('qabox-extra/qabox-dispatch')
+project(":qabox-db").projectDir = file('qabox-extra/qabox-db')
+project(":qabox-excel").projectDir = file('qabox-extra/qabox-excel')
+project(":qbox-supplement").projectDir = file('qabox-extra/qbox-supplement')
+project(":boxserver").projectDir = file('qboxserver')
